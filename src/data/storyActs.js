@@ -4,10 +4,8 @@ export const storyActs = [
     label: "Acto I",
     timeframe: "Mañana del 11 de septiembre",
     title: "El minuto en que la ciudad dejó de sonar",
-    lead:
-      "En quince minutos los trayectos cotidianos se volvieron corredores de mensajes, radios improvisadas y silencio contenido.",
-    body:
-      "Quienes iban en la línea 4, repartidores en bicicleta y oficinistas vieron primero el reflejo metálico, luego la ceniza cayendo como nieve. La radio comunitaria WBAI improvisó traducciones simultáneas para las familias latinas, mientras la señal telefónica colapsaba y los periódicos gratuitos sirvieron como mapas de rescate.",
+    lead: "En quince minutos los trayectos cotidianos se volvieron corredores de mensajes, radios improvisadas y silencio contenido.",
+    body: "Quienes iban en la línea 4, repartidores en bicicleta y oficinistas vieron primero el reflejo metálico, luego la ceniza cayendo como nieve. La radio comunitaria WBAI improvisó traducciones simultáneas para las familias latinas, mientras la señal telefónica colapsaba y los periódicos gratuitos sirvieron como mapas de rescate.",
     highlights: [
       {
         title: "08:49 a. m.",
@@ -28,8 +26,7 @@ export const storyActs = [
     fieldNote:
       "Los relatos coinciden en que el ruido de los aviones dio paso a un zumbido grave de sirenas, un contraste que muchas crónicas recogen como el “silencio más ruidoso” de la ciudad.",
     quote: {
-      text:
-        "Los pasajeros se pasaban teléfonos descompuestos solo para sentir que seguían comunicados. Fue un código de acompañamiento.",
+      text: "Los pasajeros se pasaban teléfonos descompuestos solo para sentir que seguían comunicados. Fue un código de acompañamiento.",
       author: "Elena P., operadora de la línea 4",
       source: "Archivo oral de WNYC, 2002",
     },
@@ -37,12 +34,14 @@ export const storyActs = [
       {
         label: "Líneas colapsadas",
         value: "3 de 4",
-        detail: "Los nodos de Verizon cercanos al World Trade Center quedaron fuera de servicio.",
+        detail:
+          "Los nodos de Verizon cercanos al World Trade Center quedaron fuera de servicio.",
       },
       {
         label: "Radios cívicas",
         value: "18",
-        detail: "Coordinaban traducciones y rutas seguras para comunidades inmigrantes.",
+        detail:
+          "Coordinaban traducciones y rutas seguras para comunidades inmigrantes.",
       },
     ],
     resources: [
@@ -96,8 +95,7 @@ export const storyActs = [
     fieldNote:
       "La respuesta civil y de emergencia convirtió cafeterías en salas de rehidratación, iglesias en centros logísticos y ferris privados en ambulancias flotantes. Cada minuto contaba para retirar personas antes de nuevos derrumbes.",
     quote: {
-      text:
-        "Subimos por la escalera A repitiendo en voz alta: calor extremo, humo denso, seguimos avanzando. Era la forma de que todos supieran que aún íbamos juntos.",
+      text: "Subimos por la escalera A repitiendo en voz alta: calor extremo, humo denso, seguimos avanzando. Era la forma de que todos supieran que aún íbamos juntos.",
       author: "Capitán Patrick Brown, FDNY Ladder 3",
       source: "Transcripción de radio, FDNY",
     },
@@ -105,7 +103,8 @@ export const storyActs = [
       {
         label: "Rescatistas",
         value: "2 000+",
-        detail: "Bomberos, paramédicos y voluntarios registrados durante la mañana.",
+        detail:
+          "Bomberos, paramédicos y voluntarios registrados durante la mañana.",
       },
       {
         label: "Puentes cerrados",
@@ -117,18 +116,20 @@ export const storyActs = [
       {
         type: "document",
         title: "FDNY · Oral Histories",
-        description: "Testimonios completos de las compañías que ingresaron a las torres.",
+        description:
+          "Testimonios completos de las compañías que ingresaron a las torres.",
         url: "https://www1.nyc.gov/site/fdny/about/resources/9-11-oral-histories.page",
       },
       {
         type: "video",
         title: "Boatlift · The People of 9/11",
-        description: "Documental sobre la operación marítima espontánea en el Hudson.",
+        description:
+          "Documental sobre la operación marítima espontánea en el Hudson.",
         url: "https://youtu.be/MDOrzF7B2Kg",
       },
     ],
     visuals: {
-      main: "/images/s2-1.jpeg",
+      main: "/images/s2-1.webp",
       thumb: "/images/s2-2.webp",
     },
     palette: {
@@ -163,8 +164,7 @@ export const storyActs = [
     fieldNote:
       "La noche activó memorias colectivas: quienes no podían ofrecer rescate ofrecieron listas, traducciones, comida caliente y espacio para llorar. La documentación ciudadana de esa vigilia hoy alimenta museos y archivos digitales.",
     quote: {
-      text:
-        "Escribimos los nombres en tiza, luego en carteles plastificados, porque nadie quería que la lluvia borrara la búsqueda.",
+      text: "Escribimos los nombres en tiza, luego en carteles plastificados, porque nadie quería que la lluvia borrara la búsqueda.",
       author: "Farah L., voluntaria en Union Square",
       source: "Diarios del September 11 Digital Archive",
     },
@@ -172,25 +172,29 @@ export const storyActs = [
       {
         label: "Lenguas registradas",
         value: "10+",
-        detail: "Mensajes en español, árabe, mandarín, bengalí y lenguas indígenas.",
+        detail:
+          "Mensajes en español, árabe, mandarín, bengalí y lenguas indígenas.",
       },
       {
         label: "Centros de apoyo",
         value: "65",
-        detail: "Espacios religiosos y comunitarios que ofrecieron refugio esa noche.",
+        detail:
+          "Espacios religiosos y comunitarios que ofrecieron refugio esa noche.",
       },
     ],
     resources: [
       {
         type: "archive",
         title: "Library of Congress · 9/11 Documentary Project",
-        description: "Cartas, fotografías y diarios digitalizados en varios idiomas.",
+        description:
+          "Cartas, fotografías y diarios digitalizados en varios idiomas.",
         url: "https://www.loc.gov/item/afc2001015/",
       },
       {
         type: "collection",
         title: "Smithsonian · September 11 Collection",
-        description: "Objetos y velas recuperadas de Union Square y Battery Park.",
+        description:
+          "Objetos y velas recuperadas de Union Square y Battery Park.",
         url: "https://americanhistory.si.edu/september-11",
       },
     ],

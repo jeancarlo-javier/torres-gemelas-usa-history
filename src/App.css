@@ -457,6 +457,35 @@ button:focus-visible {
   font-size: 0.9rem;
 }
 
+.acts-credits {
+  margin-top: 1rem;
+  padding: 1.5rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.credit-block {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.credit-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-muted, rgba(235, 220, 205, 0.65));
+}
+
+.credit-value {
+  font-size: 1.05rem;
+  margin: 0;
+  font-weight: 600;
+}
+
 @media (max-width: 720px) {
   .acts-header__eyebrow {
     letter-spacing: 0.3em;

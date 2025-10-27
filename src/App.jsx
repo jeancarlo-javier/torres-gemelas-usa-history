@@ -174,6 +174,22 @@ export default function ThreeActStory() {
             </div>
           </motion.section>
         </AnimatePresence>
+        <footer className="acts-credits" aria-label="Créditos">
+          <div className="credit-block">
+            <span className="credit-label">Autor</span>
+            <strong className="credit-value">
+              Jeancarlo Javier Quintana Centeno
+            </strong>
+          </div>
+          <div className="credit-block">
+            <span className="credit-label">Profesor</span>
+            <strong className="credit-value">Diego Sarmiento Delgado</strong>
+          </div>
+          <div className="credit-block">
+            <span className="credit-label">Curso</span>
+            <strong className="credit-value">US HISTORY SINCE 1877</strong>
+          </div>
+        </footer>
       </div>
     </div>
   );
