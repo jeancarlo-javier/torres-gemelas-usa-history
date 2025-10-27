@@ -1,17 +1,16 @@
-# Operación Historia: EE.UU. en la Segunda Guerra Mundial
+# Una ciudad que habla con luces: Relato interactivo del 11-S
 
-Este proyecto es un dossier interactivo que narra los momentos clave de la participación de Estados Unidos en la Segunda Guerra Mundial, desde su postura inicial de neutralidad hasta su papel decisivo en la victoria aliada y su consolidación como potencia mundial.
+Este proyecto es un diario visual interactivo que narra las primeras horas de los atentados del 11 de septiembre de 2001 en Nueva York, enfocándose en la respuesta humana y comunitaria frente al caos.
 
 ## Descripción
 
-A través de una línea de tiempo visual e interactiva, la aplicación presenta los eventos más significativos que marcaron la transición de EE.UU. hacia la guerra y su posterior liderazgo. La narrativa está dividida en cuatro actos, cada uno cubriendo un período específico del conflicto:
+A través de una línea de tiempo visual e interactiva, la aplicación presenta un relato en tres actos que explora los eventos desde el impacto inicial hasta la vigilia nocturna. La narrativa se centra en cómo la gente común, los servicios de emergencia y las comunidades se organizaron para comunicarse, rescatar y recordar.
 
--   **Acto I: América y la Tormenta (1939-1941):** El ascenso del Eje en Europa y la respuesta inicial de EE.UU.
--   **Acto II: El Despertar del Gigante (1941-1943):** El ataque a Pearl Harbor y la movilización total del país.
--   **Acto III: La Liberación de Europa (1944-1945):** El desembarco de Normandía y el avance hacia la victoria en Europa.
--   **Acto IV: El Fin del Imperio y el Amanecer Atómico (1945):** Las batallas finales en el Pacífico y el inicio de la era nuclear.
+-   **Acto I: Mañana del 11 de septiembre:** El desconcierto inicial, el colapso de las comunicaciones y las primeras muestras de solidaridad.
+-   **Acto II: Rescate y caos:** La heroica respuesta de los bomberos y voluntarios, y la evacuación masiva improvisada.
+-   **Acto III: Vigilia y legado:** La ciudad se une en el recuerdo, creando memoriales espontáneos y archivos ciudadanos para el futuro.
 
-Cada evento incluye una descripción detallada, imágenes de archivo y referencias a fuentes históricas para una mayor profundización.
+Cada acto incluye una descripción detallada, imágenes, datos clave, citas de testigos y referencias a archivos históricos y documentales para una mayor profundización.
 
 ## Características Técnicas
 
