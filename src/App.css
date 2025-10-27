@@ -292,6 +292,57 @@ button:focus-visible {
   color: var(--text-muted, rgba(235, 220, 205, 0.76));
 }
 
+.act-panel__field-note {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px dashed var(--outline, rgba(255, 255, 255, 0.16));
+  color: var(--text-muted, rgba(235, 220, 205, 0.78));
+  font-size: 0.95rem;
+}
+
+.act-panel__field-note span {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+  color: var(--accent, #d7a869);
+}
+
+.act-panel__metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.8rem;
+}
+
+.act-metric {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 0.9rem 1rem;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.act-metric span {
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent, #d7a869);
+}
+
+.act-metric strong {
+  display: block;
+  font-size: 1.65rem;
+  margin-top: 0.3rem;
+  color: #fff6e5;
+}
+
+.act-metric p {
+  margin: 0.3rem 0 0;
+  color: var(--text-muted, rgba(235, 220, 205, 0.78));
+}
+
 .act-panel__highlights {
   display: grid;
   gap: 0.9rem;
@@ -316,6 +367,94 @@ button:focus-visible {
 .highlight-callout p {
   margin: 0;
   color: var(--text-muted, rgba(235, 220, 205, 0.82));
+}
+
+.act-panel__quote {
+  margin: 1rem 0 0;
+  padding: 1rem 1.2rem;
+  border-left: 3px solid var(--accent, #d7a869);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 0 18px 18px 0;
+  color: var(--text-muted, rgba(235, 220, 205, 0.82));
+  font-style: italic;
+}
+
+.act-panel__quote cite {
+  display: block;
+  margin-top: 0.6rem;
+  font-style: normal;
+  font-size: 0.9rem;
+  color: #fff7ec;
+}
+
+.act-panel__quote span {
+  color: var(--text-muted, rgba(235, 220, 205, 0.7));
+}
+
+.act-resources {
+  margin-top: 1.4rem;
+}
+
+.act-resources__header span {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent, #d7a869);
+}
+
+.act-resources__header h3 {
+  margin: 0.4rem 0 1rem;
+  font-size: 1.15rem;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+
+.resource-card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 0.9rem 1rem;
+  display: flex;
+  gap: 0.8rem;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(0, 0, 0, 0.25);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.resource-card:focus-visible,
+.resource-card:hover {
+  border-color: var(--accent, #d7a869);
+  transform: translateY(-2px);
+}
+
+.resource-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: #fff6e5;
+}
+
+.resource-card__label {
+  margin: 0;
+  font-weight: 600;
+}
+
+.resource-card__description {
+  margin: 0.25rem 0 0;
+  color: var(--text-muted, rgba(235, 220, 205, 0.78));
+  font-size: 0.9rem;
 }
 
 @media (max-width: 720px) {

@@ -4,6 +4,16 @@ import "./App.css";
 import { storyActs } from "./data/storyActs";
 
 const totalActs = storyActs.length;
+const resourceIcons = {
+  audio: "AUD",
+  video: "VID",
+  document: "DOC",
+  map: "MAP",
+  archive: "ARC",
+  collection: "COL",
+};
+
+const getResourceIcon = (type) => resourceIcons[type] || "REF";
 
 export default function ThreeActStory() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -101,6 +111,23 @@ export default function ThreeActStory() {
               <h2>{activeAct.title}</h2>
               <p className="act-panel__lead">{activeAct.lead}</p>
               <p className="act-panel__body">{activeAct.body}</p>
+              {activeAct.fieldNote && (
+                <p className="act-panel__field-note">
+                  <span>Nota de campo</span>
+                  {activeAct.fieldNote}
+                </p>
+              )}
+              {activeAct.dataPoints?.length > 0 && (
+                <div className="act-panel__metrics" role="list">
+                  {activeAct.dataPoints.map((point) => (
+                    <div key={point.label} className="act-metric" role="listitem">
+                      <span>{point.label}</span>
+                      <strong>{point.value}</strong>
+                      <p>{point.detail}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
               <div className="act-panel__highlights">
                 {activeAct.highlights.map((item) => (
                   <div key={item.title} className="highlight-callout">
@@ -109,6 +136,41 @@ export default function ThreeActStory() {
                   </div>
                 ))}
               </div>
+              {activeAct.quote && (
+                <blockquote className="act-panel__quote">
+                  <p>“{activeAct.quote.text}”</p>
+                  <cite>
+                    {activeAct.quote.author} · <span>{activeAct.quote.source}</span>
+                  </cite>
+                </blockquote>
+              )}
+              {activeAct.resources?.length > 0 && (
+                <div className="act-resources">
+                  <div className="act-resources__header">
+                    <span>Material complementario</span>
+                    <h3>Archivos recomendados</h3>
+                  </div>
+                  <div className="resource-grid">
+                    {activeAct.resources.map((resource) => (
+                      <a
+                        key={resource.title}
+                        className="resource-card"
+                        href={resource.url}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <span className="resource-card__icon" aria-hidden="true">
+                          {getResourceIcon(resource.type)}
+                        </span>
+                        <div>
+                          <p className="resource-card__label">{resource.title}</p>
+                          <p className="resource-card__description">{resource.description}</p>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </motion.section>
         </AnimatePresence>
