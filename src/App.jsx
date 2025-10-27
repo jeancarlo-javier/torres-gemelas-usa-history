@@ -1,156 +1,117 @@
-import { useState, useMemo, useRef, useCallback, useId } from "react";
+import { useMemo, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./App.css";
-import { temperatureStates } from "./data/temperatureStates";
-import TemperaturePanel from "./components/TemperaturePanel";
-import StateCard from "./components/StateCard";
+import { storyActs } from "./data/storyActs";
 
-const totalStates = temperatureStates.length;
+const totalActs = storyActs.length;
 
-const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-
-export default function DiplomaticTemperatureControl() {
+export default function ThreeActStory() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const stopRefs = useRef([]);
-  const navIdBase = useId();
-  const topRef = useRef(null);
+  const activeAct = storyActs[activeIndex];
 
-  const activeState = temperatureStates[activeIndex];
-
-  const dynamicPalette = useMemo(
+  const palette = useMemo(
     () => ({
-      "--background-gradient": activeState.colors.background,
-      "--background-overlay": activeState.colors.backdrop,
-      "--accent": activeState.colors.accent,
-      "--accent-soft": activeState.colors.accentSoft,
-      "--surface": activeState.colors.surface,
-      "--surface-strong": activeState.colors.surfaceStrong,
-      "--outline": activeState.colors.outline,
-      "--text-muted": activeState.colors.textMuted,
-      "--track": activeState.colors.track,
+      "--background-gradient": activeAct.palette.background,
+      "--accent": activeAct.palette.accent,
+      "--accent-soft": activeAct.palette.accentSoft,
+      "--surface": activeAct.palette.surface,
+      "--outline": activeAct.palette.outline,
+      "--text-muted": activeAct.palette.textMuted,
     }),
-    [activeState]
+    [activeAct]
   );
 
-  const scrollToTop = useCallback(() => {
-    topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, []);
-
-  const handleSelect = useCallback((index) => {
+  const goTo = useCallback((index) => {
+    if (index < 0 || index >= totalActs) return;
     setActiveIndex(index);
   }, []);
 
-  const handleStopKey = useCallback((event, index) => {
-    if (event.key === "ArrowRight" || event.key === "ArrowDown") {
-      event.preventDefault();
-      const next = clamp(index + 1, 0, totalStates - 1);
-      if (next !== index) {
-        setActiveIndex(next);
-        stopRefs.current[next]?.focus({ preventScroll: true });
-      }
-    } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
-      event.preventDefault();
-      const next = clamp(index - 1, 0, totalStates - 1);
-      if (next !== index) {
-        setActiveIndex(next);
-        stopRefs.current[next]?.focus({ preventScroll: true });
-      }
-    } else if (event.key === "Home") {
-      event.preventDefault();
-      setActiveIndex(0);
-      stopRefs.current[0]?.focus({ preventScroll: true });
-    } else if (event.key === "End") {
-      event.preventDefault();
-      const last = totalStates - 1;
-      setActiveIndex(last);
-      stopRefs.current[last]?.focus({ preventScroll: true });
-    }
-  }, []);
-
-  const handleCardNavigate = useCallback(
-    (index) => {
-      const nextIndex = clamp(index, 0, totalStates - 1);
-      if (nextIndex === activeIndex) {
-        scrollToTop();
-        return;
-      }
-      setActiveIndex(nextIndex);
-      stopRefs.current[nextIndex]?.focus({ preventScroll: true });
-      scrollToTop();
-    },
-    [activeIndex, scrollToTop]
-  );
-
-  const progressFraction =
-    totalStates > 1 ? activeIndex / (totalStates - 1) : 0;
-  const rawProgress = progressFraction * 100;
-  const progressWidth =
-    totalStates === 1 ? 100 : clamp(rawProgress, 1.5, 100);
-  const cursorLeft =
-    totalStates === 1 ? 50 : clamp(rawProgress, 1.5, 98.5);
-  const tabIds = useMemo(
-    () =>
-      temperatureStates.map(
-        (state) => `${navIdBase}-tab-${state.id}`
-      ),
-    [navIdBase]
-  );
-  const contentIds = useMemo(
-    () =>
-      temperatureStates.map(
-        (state) => `${navIdBase}-panel-${state.id}`
-      ),
-    [navIdBase]
-  );
-
   return (
-    <div ref={topRef} className="diplomatic-root" style={dynamicPalette}>
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={activeState.id}
-          aria-hidden
-          className="diplomatic-backdrop"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.8 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        />
-      </AnimatePresence>
-      <div className="diplomatic-noise" aria-hidden />
-      <div className="diplomatic-surface">
-        <TemperaturePanel
-          states={temperatureStates}
-          activeIndex={activeIndex}
-          onSelect={handleSelect}
-          stopRefs={stopRefs}
-          handleStopKey={handleStopKey}
-          progressWidth={progressWidth}
-          cursorLeft={cursorLeft}
-          tabIds={tabIds}
-          contentIds={contentIds}
-        />
-        <main className="diplomatic-content">
-          <AnimatePresence mode="wait">
-            <StateCard
-              key={activeState.id}
-              state={activeState}
-              contentId={contentIds[activeIndex]}
-              tabId={tabIds[activeIndex]}
-              onPrev={
-                activeIndex > 0
-                  ? () => handleCardNavigate(activeIndex - 1)
-                  : undefined
-              }
-              onNext={
-                activeIndex < totalStates - 1
-                  ? () => handleCardNavigate(activeIndex + 1)
-                  : undefined
-              }
-              hasPrev={activeIndex > 0}
-              hasNext={activeIndex < totalStates - 1}
-            />
-          </AnimatePresence>
-        </main>
+    <div className="acts-root" style={palette}>
+      <div className="acts-parallax" aria-hidden />
+      <div className="acts-backdrop" aria-hidden />
+      <div className="acts-shell">
+        <header className="acts-header">
+          <span className="acts-header__eyebrow">Relato en tres actos · 11 de septiembre</span>
+          <h1>Una ciudad que habla con luces</h1>
+          <p>
+            Este relato acompaña las primeras horas tras los atentados, desde el desconcierto
+            inicial hasta la vigilia nocturna. Navega cada acto y descubre cómo la gente hiló
+            instrucciones, rescates y memoria compartida.
+          </p>
+        </header>
+
+        <nav className="acts-timeline" aria-label="Navegación de actos">
+          <button
+            type="button"
+            className="timeline-arrow"
+            onClick={() => goTo(activeIndex - 1)}
+            disabled={activeIndex === 0}
+            aria-label="Acto anterior"
+          >
+            ←
+          </button>
+          <div className="timeline-track">
+            {storyActs.map((act, index) => (
+              <button
+                key={act.id}
+                type="button"
+                className="timeline-stop"
+                data-active={index === activeIndex}
+                onClick={() => goTo(index)}
+                aria-current={index === activeIndex}
+              >
+                <span className="timeline-stop__label">{act.label}</span>
+                <span className="timeline-stop__year">{act.timeframe}</span>
+              </button>
+            ))}
+          </div>
+          <button
+            type="button"
+            className="timeline-arrow"
+            onClick={() => goTo(activeIndex + 1)}
+            disabled={activeIndex === totalActs - 1}
+            aria-label="Acto siguiente"
+          >
+            →
+          </button>
+        </nav>
+
+        <AnimatePresence mode="wait">
+          <motion.section
+            key={activeAct.id}
+            className="act-panel"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -24 }}
+            transition={{ duration: 0.45, ease: "easeOut" }}
+          >
+            <div className="act-panel__visuals">
+              <figure className="act-figure act-figure--main">
+                <img src={activeAct.visuals.main} alt="Escena representativa" loading="lazy" />
+              </figure>
+              <figure className="act-figure act-figure--thumb">
+                <img src={activeAct.visuals.thumb} alt="Detalle documental" loading="lazy" />
+              </figure>
+            </div>
+            <div className="act-panel__content">
+              <span className="act-panel__eyebrow">
+                {activeAct.label} · {activeAct.timeframe}
+              </span>
+              <h2>{activeAct.title}</h2>
+              <p className="act-panel__lead">{activeAct.lead}</p>
+              <p className="act-panel__body">{activeAct.body}</p>
+              <div className="act-panel__highlights">
+                {activeAct.highlights.map((item) => (
+                  <div key={item.title} className="highlight-callout">
+                    <span>{item.title}</span>
+                    <p>{item.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.section>
+        </AnimatePresence>
       </div>
     </div>
   );
