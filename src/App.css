@@ -244,6 +244,9 @@ button:focus-visible {
 .act-panel__visuals {
   display: grid;
   gap: 1rem;
+  grid-template-rows: minmax(0, 1fr) auto;
+  align-self: stretch;
+  height: 100%;
 }
 
 .act-figure {
@@ -252,6 +255,8 @@ button:focus-visible {
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: #000;
+  aspect-ratio: 9 / 16;
+  min-height: 0;
 }
 
 .act-figure img {
@@ -262,11 +267,11 @@ button:focus-visible {
 }
 
 .act-figure--main {
-  min-height: 280px;
+  min-height: clamp(360px, 62vh, 720px);
 }
 
 .act-figure--thumb {
-  min-height: 140px;
+  min-height: clamp(160px, 32vh, 360px);
   opacity: 0.9;
 }
 
@@ -455,6 +460,28 @@ button:focus-visible {
   margin: 0.25rem 0 0;
   color: var(--text-muted, rgba(235, 220, 205, 0.78));
   font-size: 0.9rem;
+}
+
+.act-panel__personal-opinion {
+  margin-top: 1.5rem;
+  padding: 1rem 1.2rem;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.03);
+  display: grid;
+  gap: 0.35rem;
+}
+
+.act-panel__personal-opinion span {
+  font-size: 0.78rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent, #d7a869);
+}
+
+.act-panel__personal-opinion p {
+  margin: 0;
+  color: var(--text-muted, rgba(235, 220, 205, 0.82));
 }
 
 .acts-credits {

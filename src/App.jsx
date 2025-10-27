@@ -171,6 +171,12 @@ export default function ThreeActStory() {
                   </div>
                 </div>
               )}
+              {activeAct.personalOpinion && (
+                <div className="act-panel__personal-opinion">
+                  <span>Opinión personal</span>
+                  <p>{activeAct.personalOpinion}</p>
+                </div>
+              )}
             </div>
           </motion.section>
         </AnimatePresence>

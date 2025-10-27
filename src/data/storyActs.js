@@ -25,6 +25,8 @@ export const storyActs = [
     ],
     fieldNote:
       "Los relatos coinciden en que el ruido de los aviones dio paso a un zumbido grave de sirenas, un contraste que muchas crónicas recogen como el “silencio más ruidoso” de la ciudad.",
+    personalOpinion:
+      "Creo que en este amanecer la ciudad demostró que el compañerismo puede aparecer incluso antes de saber qué está pasando.",
     quote: {
       text: "Los pasajeros se pasaban teléfonos descompuestos solo para sentir que seguían comunicados. Fue un código de acompañamiento.",
       author: "Elena P., operadora de la línea 4",
@@ -94,6 +96,8 @@ export const storyActs = [
     ],
     fieldNote:
       "La respuesta civil y de emergencia convirtió cafeterías en salas de rehidratación, iglesias en centros logísticos y ferris privados en ambulancias flotantes. Cada minuto contaba para retirar personas antes de nuevos derrumbes.",
+    personalOpinion:
+      "Para mí, este acto demuestra que la prisa por ayudar fue más veloz que cualquier instrucción oficial.",
     quote: {
       text: "Subimos por la escalera A repitiendo en voz alta: calor extremo, humo denso, seguimos avanzando. Era la forma de que todos supieran que aún íbamos juntos.",
       author: "Capitán Patrick Brown, FDNY Ladder 3",
@@ -163,6 +167,8 @@ export const storyActs = [
     ],
     fieldNote:
       "La noche activó memorias colectivas: quienes no podían ofrecer rescate ofrecieron listas, traducciones, comida caliente y espacio para llorar. La documentación ciudadana de esa vigilia hoy alimenta museos y archivos digitales.",
+    personalOpinion:
+      "Me mueve ver cómo la vigilia convirtió las plazas en un archivo vivo; siento que repetir los nombres fue una forma sencilla de abrazar a toda la ciudad.",
     quote: {
       text: "Escribimos los nombres en tiza, luego en carteles plastificados, porque nadie quería que la lluvia borrara la búsqueda.",
       author: "Farah L., voluntaria en Union Square",
